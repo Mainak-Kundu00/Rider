@@ -35,9 +35,8 @@ userSchema.methods.generateAuthToken = function () {
 }
 
 
-userSchema.methods.createPassword = async function (password) {
-    const password =  await bcrypt.hash(this.password,12);
-    return password;
+userSchema.statics.createPassword = async function (password) {
+    return await bcrypt.hash(password,12);
 }
 
 
