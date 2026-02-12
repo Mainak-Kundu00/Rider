@@ -20,6 +20,8 @@ router.post('/login',[
     controller.loginUser
 );
 
+router.get('/profile', controller.getUserProfile);
+
 
 
 module.exports = router;
