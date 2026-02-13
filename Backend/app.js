@@ -4,6 +4,7 @@ env.config();
 const connectDb = require('./databases/db');
 const express = require('express');
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
 const userRoute = require('./routes/userRoute');
 
 const app = express();
@@ -11,6 +12,7 @@ const app = express();
 app.use(cors(process.env.CORS_ORIGIN)); 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+app.use(cookieParser());
 
 connectDb();
 
